@@ -11,10 +11,19 @@ export const consultarArtistas = async () => {
   }
 };
 export const consultarAdministradores = async () => {
-    try {
-      const { data } = await axios.post(`${URLAPI}/administradores`);
-      return data;
-    } catch (e) {
-      console.error(e);
-    }
-  };
+  try {
+    const { data } = await axios.post(`${URLAPI}/administradores`);
+    return data;
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+export const consultarCategorias = async () => {
+  try {
+    const { data } = await axios.post(`${URLAPI}/categorias`);
+    return data;
+  } catch (e) {
+    console.error(e);
+  }
+};

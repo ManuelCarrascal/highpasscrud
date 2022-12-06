@@ -20,27 +20,41 @@ export const MenuHighPass = () => {
       navigate("/login");
     }
   }, []);
+
   return (
     <>
       <div className="containerMenu">
         <header className="headerMenuNav">
           <nav className="navbarMenu">
-            <NavLink className="optionNavbarMenu" to="useroptions">
+            <NavLink className="optionNavbarMenu" id="user" to="useroptions">
               <UserIcon />
             </NavLink>
-            <NavLink className="optionNavbarMenu" to="countryoptions">
+            <NavLink
+              className="optionNavbarMenu"
+              id="country"
+              to="countryoptions"
+            >
               <CountryIcon />
             </NavLink>
-            <NavLink className="optionNavbarMenu">
+            <NavLink className="optionNavbarMenu" id="project" to={"projects"}>
               <FileIcon />
             </NavLink>
-            <NavLink className="optionNavbarMenu" to="categoriesoptions">
+            <NavLink
+              className="optionNavbarMenu"
+              id="category"
+              to="categoriesoptions"
+            >
               <TagIcon />
             </NavLink>
-            <NavLink className="optionNavbarMenu" to="aboutus">
+            <NavLink className="optionNavbarMenu" id="about" to="aboutus">
               <HelpIcon />
             </NavLink>
-            <NavLink className="optionNavbarMenu" to="/" onClick={handleClick}>
+            <NavLink
+              className="optionNavbarMenu"
+              id="exit"
+              to="/"
+              onClick={handleClick}
+            >
               <LogOffIcon />
             </NavLink>
           </nav>

@@ -1,33 +1,68 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { HeaderOppciones } from "./HeaderOpciones";
 
-export const UserCrudOptions = ({ title }) => {
+export const UserCrudOptions = () => {
+  const [artistas, setartistas] = useState([]);
+  const [administradores, setadministradores] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/artistas").then((respuesta) => {
+      const data = respuesta.data;
+      setartistas(data);
+      console.log(data);
+    });
+    axios.get("http://localhost:3001/administradores").then((respuesta) => {
+      const data = respuesta.data;
+      setadministradores(data);
+      console.log(data);
+    });
+  }, []);
   return (
     <>
       <HeaderOppciones />
       <div className="containerBottonsOptions">
         <div className="contContainer">
           <div>
-            <label>{title}</label>
-            <button className="btnOptionCrud">Consultar Artistas</button>
-            <button className="btnOptionCrud">Actualizar Artistas</button>
+            <label className="titleCard">artistas:</label>
           </div>
           <div>
-            <button className="btnOptionCrud">Consultar Administradores</button>
-            <button className="btnOptionCrud">
-              Actualizar Administradores
-            </button>
+            <label className="titleCard">Administradores:</label>
           </div>
         </div>
-        <table className="table">
-          <tr className="tr">
-            <th></th>
-          </tr>
-          <tr>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-          </tr>
+      </div>
+      <div className="tableContainer">
+        <table>
+          <tbody>
+            <tr>
+              <th>Usuario</th>
+              <th>Correo</th>
+              <th>telefono</th>
+            </tr>
+            {artistas.map((v) => (
+              <tr>
+                <td>{v.nom_usuario}</td>
+                <td>{v.acceso}</td>
+                <td>{v.telefono}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <th>Usuario</th>
+              <th>Correo</th>
+              <th>telefono</th>
+            </tr>
+            {administradores.map((v) => (
+              <tr>
+                <td>{v.nom_usu_administrador}</td>
+                <td>{v.acceso}</td>
+                <td>{v.tel_administrador}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </>

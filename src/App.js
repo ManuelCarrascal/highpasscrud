@@ -8,6 +8,7 @@ import { UserCrudOptions } from "./components/UserCrudOptions";
 import { CountryCrudOptions } from "./components/CountryCrudOptions";
 import { HelpCrudComponent } from "./components/helpCrudComponent";
 import { CategoriesCrudOptions } from "./components/CategoriesCrudOptions";
+import { ProjectCrudOptions } from "./components/ProjectCrudOptions";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/menu" element={<MenuHighPass />}>
             <Route path="useroptions" element={<UserCrudOptions />} />
             <Route path="countryoptions" element={<CountryCrudOptions />} />
+            <Route path="projects" element={<ProjectCrudOptions />} />
             <Route
               path="categoriesoptions"
               element={<CategoriesCrudOptions />}
