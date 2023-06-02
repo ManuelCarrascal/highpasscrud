@@ -4,25 +4,26 @@
   --backgroundColorPageForms: #f6f6f6;
   --baseColorMenu: dark;
   --backgroundColorMainAplication: #e8ebef;
-  --backgroundColorCrudMenu: #18181b;
-  --backgroundColorGreyCrudMenu: #393939;
+  --backgroundColorCrudMenu: #cdcdcd;
+  --backgroundColorGreyCrudMenu: #a9a9a9;
 }
 *,
 *:before,
 *:after {
+  box-sizing: border-box;
+  font-family: "Roboto";
+  font-size: inherit;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-size: inherit;
   scroll-behavior: smooth;
 }
 body {
-  line-height: 1.5;
+  background-color: var(--backgroundColorMainAplication);
   font-size: 1rem;
   font-weight: 400;
-  overflow-x: hidden;
   height: calc(100vh);
-  background-color: var(--backgroundColorMainAplication);
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 body::-webkit-scrollbar {
   --webkit-appearance: none;
@@ -39,8 +40,8 @@ body::-webkit-scrollbar:horizontal {
 }
 body::-webkit-scrollbar-thumb {
   background-color: #fe8c00;
-  border-radius: 20px;
   border: 3px solid #f0f0f0;
+  border-radius: 20px;
 }
 body::-webkit-scrollbar-track {
   border-radius: 10px;
@@ -49,199 +50,199 @@ a {
   text-decoration: none;
 }
 p {
-  margin-top: 0;
   margin-bottom: 1rem;
+  margin-top: 0;
 }
 .App {
-  width: 100%;
   height: calc(100vh);
+  width: 100%;
 }
 header {
-  height: auto;
-  max-width: 100%;
   display: flex;
   flex-direction: column;
+  height: auto;
+  max-width: 100%;
 }
 /*index page styles*/
 .navbarIndex {
-  width: 100%;
-  padding: 0.9% 0;
   background-color: #f4f4f4;
+  padding: 0.9% 0;
+  width: 100%;
 }
 .sizeNormalLogoHighPass {
-  width: 185px;
   height: 53px;
+  width: 185px;
 }
 .containerContentNavbarIndex {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .containerButtonsNavbarIndex {
   display: flex;
-  width: auto;
   height: 100%;
   text-decoration: none;
+  width: auto;
 }
 .containerPrincipalButtonsIndex {
-  width: auto;
   height: auto;
-  margin-right: 30px;
   margin-left: 30px;
+  margin-right: 30px;
+  width: auto;
 }
 
 /*Estilos de la seccion principal del index*/
 
 .s1 {
-  display: flex;
   align-items: center;
-  min-height: 500px;
-  max-width: 100%;
   background: #fe8c00;
-  justify-content: space-around;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 100%;
+  min-height: 500px;
 }
 .containerMainPhrase {
-  align-self: center;
-  align-items: center;
   align-content: center;
-  max-width: 570px;
-  height: auto;
-  flex-grow: 0;
+  align-items: center;
+  align-self: center;
   flex-basis: 1;
+  flex-grow: 0;
+  height: auto;
   margin: 0px 10px 0px 10px;
+  max-width: 570px;
 }
 #MainPhrase {
-  width: 585.3px;
-  height: auto;
-  font-size: 60px;
   color: #fff9f9;
   font-family: "Alfa Slab One";
+  font-size: 60px;
+  height: auto;
   line-height: 1.48;
+  width: 585.3px;
 }
 #specifyMainPhrase {
-  max-width: 570px;
-  height: auto;
-  font-weight: 200;
-  display: block;
   color: #fff9f9b7;
+  display: block;
   font-family: "Roboto";
+  font-weight: 200;
+  height: auto;
+  max-width: 570px;
 }
 .containerRepresentationAndInputRegister {
-  height: 200px;
-  max-width: 600px;
   display: flex;
   flex-direction: column;
+  height: 200px;
   justify-content: space-between;
+  max-width: 600px;
 }
 .containerImagesMusicalRepresentation {
-  display: flex;
-  justify-content: space-between;
   align-content: space-around;
+  display: flex;
   height: auto;
+  justify-content: space-between;
   width: calc(550px);
 }
 .imageMusicalRepresentation {
-  width: 130px;
-  height: 130px;
-  position: relative;
-  margin: 0px 5px 0px 5px;
   display: block;
+  height: 130px;
+  margin: 0px 5px 0px 5px;
   object-fit: cover;
+  position: relative;
+  width: 130px;
 }
 .containerInputRegisterIndex {
-  display: flex;
   align-items: center;
+  display: flex;
   height: auto;
-  width: 100%;
   margin: 0px 0px 5px 0px;
+  width: 100%;
 }
 #inputRegisterIndex {
-  width: 43%;
+  border: none;
+  border-radius: 10px;
+  margin: 0px 15px 0px 50px;
   outline: none;
   padding: 12px 15px;
-  border-radius: 10px;
-  border: none;
-  margin: 0px 15px 0px 50px;
+  width: 43%;
 }
 #inputRegisterIndex:focus {
   box-shadow: 0px 0px 0px 4px #ffb35d;
 }
 #buttonGoToRegisterForm {
   background-color: black;
-  color: #f4f4f4;
   border-radius: 10px;
-  padding: 12px 15px;
+  color: #f4f4f4;
   font-weight: bold;
   margin: 0px 15px;
+  padding: 12px 15px;
 }
 /*estilos separador por qué high pass*/
 .containerWhyHighPass {
-  height: 350px;
-  width: 100%;
+  background-color: #fe8c00;
   display: flex;
   flex-direction: column;
-  background-color: #fe8c00;
+  height: 350px;
+  width: 100%;
 }
 .ovalUp {
   height: calc(50%);
-  width: calc(100%);
   overflow: hidden;
+  width: calc(100%);
 }
 .ovalDown {
   height: calc(50%);
-  width: calc(100%);
   overflow: hidden;
+  width: calc(100%);
 }
 #semiOval {
   height: calc(100%);
   width: calc(100%);
 }
 #semiOvalPath {
-  stroke: none;
   fill: #ffff;
+  stroke: none;
 }
 .containerContentWhyHighPass {
-  z-index: 1;
+  align-items: center;
   background-color: #ffff;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
   height: auto;
+  width: 100%;
+  z-index: 1;
 }
 .containerTitleWhyHighPass {
-  width: 100%;
-  text-align: center;
-  height: auto;
   font-size: 20px;
   font-weight: 700;
+  height: auto;
+  text-align: center;
+  width: 100%;
 }
 #titleWhyHighPass {
+  color: var(--colorTextosContador);
   font-family: "Staatliches";
   font-size: 40px;
-  color: var(--colorTextosContador);
 }
 #containerCounter {
   display: flex;
-  width: calc(95%);
   height: auto;
   justify-content: space-around;
+  width: calc(95%);
 }
 .titleCounterStyle {
   font-family: "Barlow";
-  font-weight: 700;
   font-size: 20px;
+  font-weight: 700;
 }
 .counterNumber {
   font-family: "Hammersmith One";
-  text-align: center;
   font-size: 20px;
+  text-align: center;
 }
 .containerFooterWhyHighPass {
-  width: 90%;
   margin: auto;
   text-align: center;
+  width: 90%;
 }
 #textFooterWhyHighPass {
   font-family: "Barlow";
@@ -262,15 +263,14 @@ header {
 }
 
 .containerForm {
-  display: grid;
-  gap: 12px;
-
   background-color: var(--backgroundColorPageForms);
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-  padding: 20px 30px;
+  display: grid;
+  gap: 12px;
   margin: 20px auto;
   max-width: 40rem;
+  padding: 20px 30px;
 }
 
 @media (min-width: 380px) {
@@ -280,21 +280,21 @@ header {
 }
 
 .resizeLogoHighPass {
-  width: 300px;
   height: auto;
+  width: 300px;
 }
 
 .containerSelectCountry {
   padding: 0.2rem 0px;
 }
 input {
-  width: 100%;
-  border-radius: 0.25rem;
-  outline: none;
   border: 1px solid rgb(179, 179, 179);
-  padding: 8px;
-  color: #393939;
+  border-radius: 0.25rem;
   caret-color: #e37f05;
+  color: #393939;
+  outline: none;
+  padding: 8px;
+  width: 100%;
 }
 
 input:focus {
@@ -302,36 +302,35 @@ input:focus {
 }
 
 #btnRegister {
-  text-decoration: none;
   color: black;
+  text-decoration: none;
 }
 #btnLogin {
-  text-decoration: none;
   color: whitesmoke;
+  text-decoration: none;
 }
 
 /* estilos formulario login*/
 .loginForm {
-  grid-template-columns: repeat(1, 1fr);
-
   gap: 12px;
+  grid-template-columns: repeat(1, 1fr);
 }
 .containerButtonForm {
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
 }
 .buttonActionForm {
-  padding: 10px;
-  width: 100%;
   background-color: #fe8c00;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  text-align: center;
   border: 1px solid #393939;
-  user-select: none;
+  border-radius: 0.25rem;
   color: whitesmoke;
+  cursor: pointer;
   margin: 0;
+  padding: 10px;
+  text-align: center;
+  user-select: none;
+  width: 100%;
 }
 .buttonActionForm:hover {
   background-color: #e37f05;
@@ -345,45 +344,51 @@ input:focus {
 
 /*Estilo para el menu del crud*/
 .containerMenu {
-  background-color: var(--backgroundColorCrudMenu);
+  background-color: var(--backgroundColorMainAplication);
+  display: grid;
   height: 100%;
   padding: 20px;
-  display: grid;
 }
 .headerMenuNav {
-  margin: auto;
   background-color: var(--backgroundColorGreyCrudMenu);
-  border-radius: 5rem;
-  width: 65%;
-  height: 7vh;
-  filter: drop-shadow(0px 13px 10px #151515);
   border-bottom: 1px solid rgba(128, 128, 128, 0.295);
+  border-radius: 5rem;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
+  height: 7vh;
+  margin: auto;
+  width: 65%;
 }
 
 .navbarMenu {
-  display: flex;
-  justify-content: space-around;
   align-content: center;
   align-items: center;
+  display: flex;
   height: 100%;
+  justify-content: space-around;
 }
 
 .optionNavbarMenu {
-  display: flex;
   align-items: center;
+  display: flex;
+  fill: #393939;
   justify-content: center;
+}
+.optionNavbarMenu:hover {
+  fill: #fe8c00;
 }
 
 .containerContentCrud {
-  width: 80vw;
-  height: 72.9735vh;
   background-color: var(--backgroundColorGreyCrudMenu);
-  padding: 20px;
-  margin: auto;
   border-radius: 1rem;
-  filter: drop-shadow(0 0 0.5rem rgb(0, 0, 0));
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.15);
+  display: flex;
+  height: 72.9735vh;
+  margin: auto;
   overflow: scroll;
   overflow-x: hidden;
+  padding: 20px;
+  width: 80vw;
+  flex-direction: column;
 }
 .containerContentCrud::-webkit-scrollbar {
   --webkit-appearance: none;
@@ -400,8 +405,8 @@ input:focus {
 }
 .containerContentCrud::-webkit-scrollbar-thumb {
   background-color: #fe8c00;
-  border-radius: 20px;
   border: 3px solid #f0f0f0;
+  border-radius: 20px;
 }
 .containerContentCrud::-webkit-scrollbar-track {
   border-radius: 10px;
@@ -423,10 +428,10 @@ input:focus {
   padding: 5px;
 }
 .btnOptionCrud:hover {
-  cursor: pointer;
   background-color: #ffb35d;
   border-color: #ffc0c0;
   color: whitesmoke;
+  cursor: pointer;
 }
 .labelCRDoptions {
   color: whitesmoke;
@@ -437,16 +442,18 @@ input:focus {
 .aboutUsContainer {
   background-color: rgba(245, 245, 245, 0.314);
   border-radius: 5px;
-  width: 100%;
-  max-height: 110.93;
-  padding: 10px;
-  margin: 10px 0px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 0px;
+  max-height: 100%;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
 }
 #textAboutUs {
   color: #131313;
-  font-size: 25px;
+  font-size: 20px;
 }
 .containerDevsSection {
   text-align: center;
@@ -462,13 +469,13 @@ input:focus {
 table,
 th,
 td {
-  border: 1px solid black;
+  padding: 6px;
   text-align: center;
-  border-radius: 5px;
-  padding: 4px;
 }
 table {
   background-color: rgba(245, 245, 245, 0.272);
+  max-width: 600px;
+  min-width: 300px;
 }
 .contContainer {
   display: flex;
@@ -480,11 +487,22 @@ table {
   justify-content: space-around;
 }
 .titleCard {
-  text-align: center;
-  font-weight: bold;
   color: whitesmoke;
   font-size: 20px;
+  font-weight: bold;
+  text-align: center;
 }
 #tableCategories {
   width: 70%;
+}
+table {
+  border: 2px solid #fe8c00;
+}
+th {
+  border-bottom: 1px solid black;
+}
+
+td {
+  text-align: center;
+  padding: 5px;
 }

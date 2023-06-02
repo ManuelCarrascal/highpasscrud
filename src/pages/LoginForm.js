@@ -23,7 +23,7 @@ export const LoginForm = () => {
     if (isLogged) {
       navigate("/menu");
     }
-  }, []);
+  });
 
   const onSubmit = async (e) => {
     e.preventDefault();
