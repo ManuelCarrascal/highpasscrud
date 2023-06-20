@@ -10,15 +10,19 @@ import SemiOvalIndex from "../assets/img/SemiOvalIndex";
 import SemiOvalIndexDown from "../assets/img/SemiOvalIndexDown";
 import { Link } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
-import { getCountArtistas, getCountProyectos} from "../services/counters.service";
+import {
+  getCountArtistas,
+  getCountProyectos,
+} from "../services/counters.service";
 
 const ContentIndex = () => {
-  const [countArtistas, setCountArtistas] = useState('');
-  const [countProyectos, setCountProyectos] = useState('');
+  const [countArtistas, setCountArtistas] = useState("");
+  const [countProyectos, setCountProyectos] = useState("");
 
   const getNumeroArtistas = useCallback(async () => {
     const response = await getCountArtistas();
-    setCountArtistas(response[0].total_artistas);
+
+    setCountArtistas(response.total_artistas);
   }, []);
 
   useEffect(() => {
@@ -27,7 +31,7 @@ const ContentIndex = () => {
 
   const getNumeroProyectos = useCallback(async () => {
     const response = await getCountProyectos();
-    setCountProyectos(response[0].total_proyectos);
+    setCountProyectos(response.total_proyectos);
   }, []);
 
   useEffect(() => {

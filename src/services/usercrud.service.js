@@ -4,15 +4,7 @@ const URLAPI = "http://localhost:3001";
 
 export const consultarArtistas = async () => {
   try {
-    const { data } = await axios.post(`${URLAPI}/artistas`);
-    return data;
-  } catch (e) {
-    console.error(e);
-  }
-};
-export const consultarAdministradores = async () => {
-  try {
-    const { data } = await axios.post(`${URLAPI}/administradores`);
+    const { data } = await axios.post(`${URLAPI}/api/artistas`);
     return data;
   } catch (e) {
     console.error(e);
@@ -21,7 +13,7 @@ export const consultarAdministradores = async () => {
 
 export const consultarCategorias = async () => {
   try {
-    const { data } = await axios.post(`${URLAPI}/categorias`);
+    const { data } = await axios.post(`${URLAPI}/api/categorias`);
     return data;
   } catch (e) {
     console.error(e);

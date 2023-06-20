@@ -6,7 +6,7 @@ import SelectDepartament from "../components/SelectDepartament";
 import {
   getCities,
   getCountries,
-  getDepartaments,
+  fetchDepartmentsByCountryId,
 } from "../services/location.service";
 import { registerUser } from "../services/register.service";
 
@@ -17,14 +17,14 @@ export const RegisterForm = () => {
   const [datos, setDatos] = useState({
     email: "",
     password: "",
-    nom_usuario: "",
-    nombres: "",
-    apellidos: "",
-    telefono: "",
-    fecha_nacimiento:"",
-    pais: "",
-    departamento: "",
-    ciudad: "",
+    username: "",
+    names: "",
+    lastnames: "",
+    phone: "",
+    birthdate: "",
+    country: "",
+    department: "",
+    city: "",
   });
 
   const handleInputChange = (event) => {
@@ -55,7 +55,7 @@ export const RegisterForm = () => {
       document.getElementById("contraseña").classList.remove("requiredField");
     }
 
-    if (!datos.nom_usuario.trim()) {
+    if (!datos.username.trim()) {
       console.log("nombre de usuario vacio");
       document.getElementById("nombreUsuario").classList.add("requiredField");
     } else {
@@ -64,26 +64,26 @@ export const RegisterForm = () => {
         .classList.remove("requiredField");
     }
 
-    if (!datos.nombres.trim()) {
-      console.log("nombres vacio");
-      document.getElementById("Nombres").classList.add("requiredField");
+    if (!datos.names.trim()) {
+      console.log("names vacio");
+      document.getElementById("names").classList.add("requiredField");
     } else {
-      document.getElementById("Nombres").classList.remove("requiredField");
+      document.getElementById("names").classList.remove("requiredField");
     }
 
-    if (!datos.apellidos.trim()) {
-      console.log("nombres vacio");
-      document.getElementById("Apellidos").classList.add("requiredField");
+    if (!datos.lastnames.trim()) {
+      console.log("names vacio");
+      document.getElementById("lastnames").classList.add("requiredField");
     } else {
-      document.getElementById("Apellidos").classList.remove("requiredField");
+      document.getElementById("lastnames").classList.remove("requiredField");
     }
 
     if (
       datos.email.trim() !== "" &&
       datos.password.trim() !== "" &&
-      datos.nom_usuario.trim() !== "" &&
-      datos.nombres.trim() !== "" &&
-      datos.apellidos.trim() !== ""
+      datos.username.trim() !== "" &&
+      datos.names.trim() !== "" &&
+      datos.lastnames.trim() !== ""
     ) {
       console.log(datos);
       registerUser(datos);
@@ -96,19 +96,14 @@ export const RegisterForm = () => {
   }, []);
 
   const getDepartamentos = async (event) => {
-    console.log(event);
-    datos.pais = event.cod_pais;
-    const response = await getDepartaments(event.cod_pais);
-    console.log(response);
-
+    datos.country = event._id;
+    const response = await fetchDepartmentsByCountryId(event._id); // aquí se pasa el ID del país
     setDepartamentos(response);
   };
 
   const getCiudades = async (event) => {
-    datos.departamento = event.cod_departamento;
-    console.log(event);
-    const response = await getCities(event.cod_departamento);
-    console.log(response);
+    datos.department = event._id;
+    const response = await getCities(event._id);
 
     setCiudades(response);
   };
@@ -143,7 +138,7 @@ export const RegisterForm = () => {
 
         <input
           id="nombreUsuario"
-          name="nom_usuario"
+          name="username"
           type={"text"}
           placeholder="Nombre de usuario"
           onChange={handleInputChange}
@@ -151,26 +146,26 @@ export const RegisterForm = () => {
         ></input>
 
         <input
-          id="Nombres"
-          name="nombres"
+          id="names"
+          name="names"
           type={"text"}
-          placeholder="Nombres"
+          placeholder="names"
           onChange={handleInputChange}
           required
         ></input>
 
         <input
-          id="Apellidos"
-          name="apellidos"
+          id="lastnames"
+          name="lastnames"
           type={"text"}
-          placeholder="Apellidos"
+          placeholder="lastnames"
           onChange={handleInputChange}
           required
         ></input>
 
         <input
-          id="telefono"
-          name="telefono"
+          id="phone"
+          name="phone"
           type={"tel"}
           placeholder="Teléfono"
           minLength="10"
@@ -190,7 +185,7 @@ export const RegisterForm = () => {
         <SelectCity ciudades={ciudades} form={datos} />
 
         <input
-          name="fecha_nacimiento"
+          name="birthdate"
           className=""
           id=""
           type={"date"}

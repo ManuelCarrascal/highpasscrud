@@ -8,17 +8,17 @@ export const CountryCrudOptions = (paises) => {
   const [Ciudades, setCiudades] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/paises").then((respuesta) => {
+    axios.get("http://localhost:3001/api/paises").then((respuesta) => {
       const data = respuesta.data;
       setPaises(data);
       console.log(data);
     });
-    axios.get("http://localhost:3001/departamentos").then((respuesta) => {
+    axios.get("http://localhost:3001/api/departamentos").then((respuesta) => {
       const data = respuesta.data;
       setDepartamentos(data);
       console.log(data);
     });
-    axios.get("http://localhost:3001/ciudades").then((respuesta) => {
+    axios.get("http://localhost:3001/api/ciudades").then((respuesta) => {
       const data = respuesta.data;
       setCiudades(data);
       console.log(data);
@@ -39,10 +39,10 @@ export const CountryCrudOptions = (paises) => {
                   <th>#</th>
                   <th>Pais</th>
                 </tr>
-                {Paises.map((v) => (
-                  <tr>
-                    <td>{v.cod_pais}</td>
-                    <td>{v.nombre_pais}</td>
+                {Paises.map((v, index) => (
+                  <tr key={index}>
+                    <td>{v._id}</td>
+                    <td>{v.name_country}</td>
                   </tr>
                 ))}
               </tbody>
@@ -63,11 +63,11 @@ export const CountryCrudOptions = (paises) => {
                   <th>Departamento</th>
                   <th>Pais</th>
                 </tr>
-                {Departamentos.map((v) => (
-                  <tr>
-                    <td>{v.cod_departamento}</td>
-                    <td>{v.nombre_departamento}</td>
-                    <td>{v.nombre_pais}</td>
+                {Departamentos.map((v, index) => (
+                  <tr key={index}>
+                    <td>{v._id}</td>
+                    <td>{v.name_department}</td>
+                    <td>{v.name_country}</td>
                   </tr>
                 ))}
               </tbody>
@@ -89,12 +89,12 @@ export const CountryCrudOptions = (paises) => {
                   <th>Departamento</th>
                   <th>Pais</th>
                 </tr>
-                {Ciudades.map((v) => (
-                  <tr>
-                    <td>{v.cod_ciudad}</td>
-                    <td>{v.nombre_ciudad}</td>
-                    <td>{v.nombre_departamento}</td>
-                    <td>{v.nombre_pais}</td>
+                {Ciudades.map((v, index) => (
+                  <tr key={index}>
+                    <td>{v._id}</td>
+                    <td>{v.name_city}</td>
+                    <td>{v.name_department}</td>
+                    <td>{v.name_country}</td>
                   </tr>
                 ))}
               </tbody>

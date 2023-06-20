@@ -6,7 +6,7 @@ export const CategoriesCrudOptions = () => {
   const [categoria, setcategoria] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/categorias").then((respuesta) => {
+    axios.get("http://localhost:3001/api/categorias").then((respuesta) => {
       const data = respuesta.data;
       setcategoria(data);
       console.log(data);
@@ -25,10 +25,10 @@ export const CategoriesCrudOptions = () => {
               <th>#</th>
               <th>Categoria</th>
             </tr>
-            {categoria.map((v) => (
-              <tr>
-                <td>{v.cod_categoria}</td>
-                <td>{v.nom_categoria}</td>
+            {categoria.map((v, index) => (
+              <tr key={index}>
+                <td>{v._id}</td>
+                <td>{v.category_name}</td>
               </tr>
             ))}
           </tbody>

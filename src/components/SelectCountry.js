@@ -21,8 +21,8 @@ export const SelectCountry = ({ paises, departamentos }) => {
         components={{ Placeholder }}
         placeholder={"País"}
         options={paises}
-        getOptionLabel={(option) => `${option.nombre_pais}`}
-        getOptionValue={(option) => `${option.cod_pais}`}
+        getOptionLabel={(option) => `${option.name_country}`}
+        getOptionValue={(option) => `${option._id}`}
         onChange={departamentos}
         required
       />

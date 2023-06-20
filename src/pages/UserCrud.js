@@ -1,10 +1,10 @@
-import { UserCrudOptions } from "../components/UserCrudOptions"
-import { MenuHighPass } from "./MenuHighPass"
+import { UserCrudOptions } from "../components/UserCrudOptions";
+import { MenuHighPass } from "./MenuHighPass";
 
-export const UserCrud=()=> {
+export const UserCrud = () => {
   return (
     <MenuHighPass>
-        <UserCrudOptions/>
+      <UserCrudOptions />
     </MenuHighPass>
-  )
-}
+  );
+};

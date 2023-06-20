@@ -36,7 +36,7 @@ export const LoginForm = () => {
         .getElementById("inputContraseña")
         .classList.remove("requiredField");
       const response = await axios.post(
-        "http://localhost:3001/sendlogin",
+        "http://localhost:3001/api/login",
         datos
       );
       sessionStorage.setItem("sesion", response.data.rows);

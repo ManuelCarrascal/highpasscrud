@@ -21,8 +21,8 @@ const SelectDepartament = ({ departamentos, ciudades }) => {
         components={{ Placeholder }}
         placeholder={"Departamento"}
         options={departamentos}
-        getOptionLabel={(option) => `${option.nombre_departamento}`}
-        getOptionValue={(option) => `${option.nombre_departamento}`}
+        getOptionLabel={(option) => `${option.name_department}`}
+        getOptionValue={(option) => `${option._id}`}
         onChange={ciudades}
         required
       />

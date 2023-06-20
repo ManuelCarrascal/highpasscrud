@@ -7,8 +7,7 @@ const Placeholder = (props) => {
 
 const SelectCity = ({ ciudades, form }) => {
   const handleChange = (event) => {
-    console.log(event);
-    form.ciudad = event.cod_ciudad;
+    form.city = event._id;
   };
   return (
     <div className="containerSelectCountry">
@@ -23,10 +22,10 @@ const SelectCity = ({ ciudades, form }) => {
           },
         })}
         components={{ Placeholder }}
-        placeholder={"Ciudad"}
+        placeholder={"city"}
         options={ciudades}
-        getOptionLabel={(option) => option.nombre_ciudad}
-        getOptionValue={(option) => option.nombre_ciudad}
+        getOptionLabel={(option) => option.name_city}
+        getOptionValue={(option) => option._id}
         onChange={handleChange}
         required
       />
